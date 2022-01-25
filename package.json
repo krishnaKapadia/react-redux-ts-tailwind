@@ -4,7 +4,7 @@
   "description": "React + Redux Toolkit + Typescript + Tailwind =  <3",
   "private": false,
   "scripts": {
-    "tailwind:dev": "tailwindcss build src/app/assets/css/tailwind.css -o src/app/assets/css/tailwind.output.css",
+    "tailwind:dev": "tailwindcss build src/app/assets/css/tailwind.css -o src/app/assets/css/tailwind.output.css -w --watch",
     "tailwind:build": "cross-env NODE_ENV=production postcss src/app/assets/css/tailwind.css -o src/app/assets/css/tailwind.output.css",
     "prestart": "npm run tailwind:dev",
     "start": "react-scripts start",

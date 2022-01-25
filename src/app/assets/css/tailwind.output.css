@@ -909,6 +909,12 @@ video {
   background-color: rgba(254, 236, 220, var(--bg-opacity));
 }
 
+.bg-green-50 {
+  --bg-opacity: 1;
+  background-color: #f3faf7;
+  background-color: rgba(243, 250, 247, var(--bg-opacity));
+}
+
 .bg-green-100 {
   --bg-opacity: 1;
   background-color: #def7ec;
@@ -1479,6 +1485,10 @@ video {
 .px-10 {
   padding-left: 2.5rem;
   padding-right: 2.5rem;
+}
+
+.pt-6 {
+  padding-top: 1.5rem;
 }
 
 .fixed {

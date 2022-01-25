@@ -21,8 +21,8 @@ const Layout: FunctionComponent = () => {
       <div className="flex flex-col flex-1 w-full">
         <Header />
 
-        {/* <main className="h-full bg-white overflow-y-auto">
-          <div className="container grid px-6 mx-auto">
+        <main className="h-full bg-white overflow-y-auto">
+          <div className="container grid px-6 mx-auto pt-6">
             <Suspense fallback={<ThemedSuspense />}>
               <Switch>
                 {routes.map((route, i) => {
@@ -42,7 +42,7 @@ const Layout: FunctionComponent = () => {
               </Switch>
             </Suspense>
           </div>
-        </main> */}
+        </main>
       </div>
     </div>
   );

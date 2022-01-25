@@ -3,7 +3,7 @@ const windmill = require('@windmill/react-ui/config')
 
 module.exports = windmill({
   mode: 'jit',
-  purge: ['src/**/*.tsx'],
+  purge: ['src/**/*.{tsx, ts}'],
   theme: {
     extend: {
       fontFamily: {
