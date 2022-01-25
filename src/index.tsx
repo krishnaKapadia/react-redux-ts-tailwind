@@ -2,7 +2,6 @@
 
 import ReactDOM from "react-dom";
 import React, { Suspense } from "react";
-import { Windmill } from "@windmill/react-ui";
 import { Provider as ReduxProvider } from "react-redux";
 import { QueryClient, QueryClientProvider } from "react-query";
 
@@ -22,9 +21,7 @@ ReactDOM.render(
     <SidebarProvider>
       <QueryClientProvider client={queryClient}>
         <Suspense fallback={<ThemedSuspense />}>
-          <Windmill usePreferences>
-            <App />
-          </Windmill>
+          <App />
         </Suspense>
       </QueryClientProvider>
     </SidebarProvider>

@@ -1,48 +1,83 @@
 /** @format */
 
-import React, { useContext, useState, FunctionComponent } from "react";
-import { Avatar, Dropdown, DropdownItem } from "@windmill/react-ui";
-
-import { MenuIcon, OutlineLogoutIcon } from "../../assets/icons";
-import { SidebarContext } from "../../context";
+import React, { FunctionComponent, useState } from "react";
+import { MenuIcon } from "../../assets/icons";
 
 export const Header: FunctionComponent = () => {
-  const { toggleSidebar } = useContext(SidebarContext);
-  const [isProfileMenuOpen, setIsProfileMenuOpen] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
+  const toggleSidebar = () => setIsMobileMenuOpen(!isMobileMenuOpen);
 
   return (
     <header className="z-40 py-4 bg-white">
-      <div className="container flex items-center justify-between h-full px-6 mx-auto text-purple-600">
+      <div className="container flex items-center justify-between h-full px-6 mx-auto">
         <button
-          className="p-1 mr-5 -ml-1 rounded-md lg:hidden focus:outline-none focus:shadow-outline-purple"
+          className="p-1 mr-5 -ml-1 rounded-md md:hidden focus:outline-none focus:shadow-outline-purple"
           onClick={toggleSidebar}
         >
           <MenuIcon className="w-6 h-6" aria-hidden="true" />
         </button>
 
-        <ul className="flex items-center flex-shrink-0 space-x-6">
-          <li className="relative">
-            <button
-              className="rounded-full focus:shadow-outline-purple focus:outline-none"
-            >
-              <Avatar
-                className="align-middle"
-                src="https://picsum.photos/200/300"
-              />
-            </button>
+        {isMobileMenuOpen && (
+          <div className="mob-nav flex flex-col md:hidden absolute">
+            <a className="link relative">Dashboard</a>
+            <a className="link relative">Add Asset</a>
+            <a className="link relative">Log out</a>
+          </div>
+        )}
 
-            <Dropdown
-              align="right"
-              isOpen={isProfileMenuOpen}
-              onClose={() => setIsProfileMenuOpen(false)}
-            >
-              <DropdownItem>
-                <OutlineLogoutIcon className="w-4 h-4 mr-3" />
-                <span>Log out</span>
-              </DropdownItem>
-            </Dropdown>
-          </li>
-        </ul>
+        <div className="md:hidden">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            className="h-6 w-6"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth={2}
+              d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"
+            />
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth={2}
+              d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"
+            />
+          </svg>
+        </div>
+
+        <div className="flex-row justify-between items-center flex-shrink-0 space-x-6 w-full hidden md:flex">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            className="h-6 w-6"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth={2}
+              d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"
+            />
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth={2}
+              d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"
+            />
+          </svg>
+
+          <ul className="flex flex-row justify-items-center">
+            <a className="relative mr-8">Dashboard</a>
+            <a className="relative">Add Asset</a>
+          </ul>
+
+          <a className="relative">Log out</a>
+        </div>
       </div>
     </header>
   );
