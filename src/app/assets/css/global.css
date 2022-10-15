@@ -1,0 +1,79 @@
+.divider {
+  margin: 24px auto;
+  width: 100%;
+  background: #d1d8e0;
+  height: 2px;
+}
+
+.overflow-elipsis {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+button:focus {
+  outline: none !important;
+}
+
+/* Utility classes */
+.w-30 {
+  width: 30%;
+}
+
+option {
+  color: black
+}
+
+.h-92 {
+  height: 92px;
+}
+
+.mob-nav {
+  position: absolute;
+  top: 64px;
+  left: 0;
+  right: 0;
+  bottom: 0px;
+  background-color: white;
+  box-shadow: 0 8px 8px -4px grey;
+}
+
+.mob-nav .link {
+  padding: 16px;
+  border-bottom: 1px solid gray;
+}
+
+.mob-nav .link:first-child {
+  border-top: 1px solid gray;
+}
+
+.slider {
+  /* background-color: lightgrey; */
+  max-width: 100%;
+  flex-wrap: nowrap;
+  overflow-x: hidden;
+  -webkit-overflow-scrolling: touch;
+  transition: overflow-x 2s;
+}
+
+.slider:hover {
+  overflow-x: scroll;
+}
+
+.slider::-webkit-scrollbar {
+  display: none;
+
+}
+
+.slider>* {
+  margin-right: 16px;
+}
+
+.slider.card {
+  flex: 0 0 auto;
+}
+
+.card {
+  min-height: 300px;
+  min-width: 260px;
+}
